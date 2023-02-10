@@ -35,7 +35,7 @@ function initGame() {
 function playerMove() {
   selectionButtons.forEach((selectionButton) => {
     selectionButton.addEventListener('click', (e) => {
-      if (playerScore === 5) {
+      if (playerScore === 4) {
         compareScore();
       }
       if (playerScore === 5) {
