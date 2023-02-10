@@ -12,14 +12,15 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   padding: 10px;
   margin-top: 120px;
 }
 .selections {
   display: flex;
-  flex-wrap: wrap;
   gap: 100px;
-  height: 300px;
+  height: 250px;
+  flex-wrap: wrap;
   width: auto;
   justify-content: center;
   align-items: center;
@@ -36,15 +37,17 @@ main {
   text-decoration: none;
   cursor: pointer;
 }
+
 .selections button:hover {
   opacity: 1;
 }
 .results {
-  margin: 30px;
+  margin-top: 30px;
   font-size: large;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   gap: 100px;
 }
 .played {
@@ -52,6 +55,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .result-score {
@@ -100,4 +104,16 @@ main {
 .reload:focus {
   background-color: #fb8332;
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+@media screen and (max-width: 720px) {
+  .selections button {
+    font-size: 50px;
+    gap: 0px;
+  }
+  .results {
+    margin-top: 0px;
+    font-size: small;
+    gap: 20px;
+  }
 }
