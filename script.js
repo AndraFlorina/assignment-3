@@ -31,7 +31,7 @@ function initGame() {
   playerMove();
   resetGame();
 }
-
+// get what button player pressed. After 5 points winned by player the game is over, so the compareScore() shows the final score
 function playerMove() {
   selectionButtons.forEach((selectionButton) => {
     selectionButton.addEventListener('click', (e) => {
@@ -47,7 +47,7 @@ function playerMove() {
     });
   });
 }
-
+//get a random selection for computer
 function randomSelection() {
   const randomIndex = Math.floor(Math.random() * SELECTIONS.length);
   const selection = SELECTIONS[randomIndex];
@@ -61,7 +61,11 @@ function verifyWinner(computerSelection, playerSelection) {
     playerScore++;
   } else if (playerSelection === 'paper' && computerSelection === 'rock') {
     playerScore++;
-  } else {
+  } else if (playerSelection===computerSelection) {
+    playerScore=playerScore;
+    computerScore=computerScore;
+  } 
+  else {
     computerScore++;
   }
   displayScore();
@@ -70,7 +74,7 @@ function verifyWinner(computerSelection, playerSelection) {
 
 function compareScore() {
   if (computerScore < playerScore) {
-    finalScoreSpan.innerHTML = 'The player is the winner 🏆 ';
+    finalScoreSpan.innerHTML = 'You are the winner 🏆 ';
   } else if (computerScore === playerScore) {
     finalScoreSpan.innerHTML = 'Tie';
   } else {
@@ -84,8 +88,8 @@ function resetGame() {
     computerScore = 0;
     finalScoreSpan.innerHTML = ' ';
     displayScore();
-    playerSelectionSpan.innerHTML =' ';
-    computerSelectionSpan.innerHTML=' ';
+    playerSelectionSpan.innerHTML ='Choose your move ';
+    computerSelectionSpan.innerHTML='Computer is ready ';
   });
 }
 
