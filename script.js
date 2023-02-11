@@ -35,10 +35,10 @@ function initGame() {
 function playerMove() {
   selectionButtons.forEach((selectionButton) => {
     selectionButton.addEventListener('click', (e) => {
-      if (playerScore === 5) {
+      if (playerScore === 5 || computerScore === 5) {
         compareScore();
       }
-      if (playerScore === 5) {
+      if (playerScore === 5 || computerScore === 5) {
         return;
       }
       const computerSelection = randomSelection();
