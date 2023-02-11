@@ -66,6 +66,10 @@ function verifyWinner(computerSelection, playerSelection) {
   else {
     computerScore++;
   }
+  if (playerScore === 5 || computerScore === 5) {
+    compareScore();
+    return;
+  }
   displayScore();
   diplayGame(computerSelection, playerSelection);
 }
