@@ -37,8 +37,6 @@ function playerMove() {
     selectionButton.addEventListener('click', (e) => {
       if (playerScore === 5 || computerScore === 5) {
         compareScore();
-      }
-      if (playerScore === 5 || computerScore === 5) {
         return;
       }
       const computerSelection = randomSelection();
